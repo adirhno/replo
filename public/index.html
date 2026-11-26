@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>לא מפספסים יותר אף הודעה מלקוח</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1c2430;--mute:#5d6877;--accent:#1f5f4a;--accent-ink:#fff;--line:#e4dfd4;--soft:#eef4f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12171d;--card:#1a212a;--ink:#eef1f4;--mute:#a1abb8;--accent:#5fc19c;--accent-ink:#0c1a14;--line:#2b3440;--soft:#18241f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12171d;--card:#1a212a;--ink:#eef1f4;--mute:#a1abb8;--accent:#5fc19c;--accent-ink:#0c1a14;--line:#2b3440;--soft:#18241f;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 system-ui,-apple-system,"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif}
+h1,h2,h3,.btn,label,.tag{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header{padding:20px 0;font:600 15px system-ui,sans-serif;color:var(--accent);}
+.hero{padding:40px 0 56px}
+.tag{display:inline-block;background:var(--soft);color:var(--accent);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:600}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:18px 0 16px;}
+.lead{font-size:20px;color:var(--mute);max-width:620px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);border:0;padding:14px 26px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:disabled{opacity:.6;cursor:default}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 24px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 15px system-ui;margin-bottom:12px}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:420px;display:flex;flex-direction:column;gap:10px;font:15px/1.45 system-ui,sans-serif}
+.m{padding:9px 13px;border-radius:14px;max-width:85%}
+.in{background:var(--soft);align-self:flex-start}
+.out{background:var(--accent);color:var(--accent-ink);align-self:flex-end}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;max-width:520px}
+label{display:block;font-size:14px;font-weight:600;margin:0 0 6px}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font:16px system-ui,sans-serif;background:var(--bg);color:var(--ink);margin-bottom:16px}
+.note{font:14px system-ui,sans-serif;color:var(--mute);margin:12px 0 0}
+#msg{font:600 15px system-ui,sans-serif;margin-top:14px}
+footer{padding:32px 0 48px;color:var(--mute);font:14px system-ui,sans-serif;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>⚖️ Replo</header>
+
+<div class="hero">
+  <span class="tag">גישה מוקדמת · חינם לעורכי הדין הראשונים</span>
+  <h1>הוואטסאפ שלכם נענה, גם כשאתם בדיון בבית המשפט.</h1>
+  <p class="lead">עוזר חכם שמשיב ללקוחות שלכם בוואטסאפ תוך שניות, אוסף את פרטי התיק ומעביר לכם סיכום מסודר, כך שאף פנייה לא הולכת לאיבוד.</p>
+  <a class="btn" href="#join">לקבלת גישה מוקדמת</a>
+</div>
+
+<section>
+  <h2>הבעיה</h2>
+  <div class="two">
+    <p style="margin:0;color:var(--mute)">לקוחות כותבים בלילה, בסופי שבוע ובזמן שאתם בדיון. עד שאתם עונים, אחרי שעות, רבים מהם כבר פנו לעורך דין אחר. אי אפשר להיות זמינים כל היום, אבל הלקוחות מצפים לתשובה עכשיו.</p>
+    <div class="chat" aria-label="שיחה לדוגמה">
+      <div class="m in">שלום, בעל הדירה לא מחזיר לי את הפיקדון. אתם יכולים לעזור?</div>
+      <div class="m out">שלום! אני העוזר הדיגיטלי של משרד עורכי הדין. אני יכול לרשום את הפרטים שלך כדי שעורך הדין יחזור אליך אישית. מתי עזבת את הדירה?</div>
+      <div class="m in">לפני חודשיים</div>
+      <div class="m out">תודה. יש לך חוזה שכירות בכתב? אעביר הכול לעורך הדין עוד היום.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>איך זה עובד</h2>
+  <div class="grid">
+    <div class="card"><div class="num">1</div><h3>מחברים את הוואטסאפ</h3><p>אנחנו מגדירים הכול בשבילכם. בלי עבודה טכנית מצדכם.</p></div>
+    <div class="card"><div class="num">2</div><h3>הוא עונה כשאתם לא יכולים</h3><p>תשובות מיידיות וידידותיות, בסגנון של המשרד שלכם, 24/7.</p></div>
+    <div class="card"><div class="num">3</div><h3>אתם מקבלים סיכום</h3><p>שם, טלפון, סוג התיק והעובדות העיקריות, מוכנים להמשך טיפול.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>נבנה לעורכי דין</h2>
+  <div class="grid">
+    <div class="card"><h3>בלי ייעוץ משפטי</h3><p>הוא לא נותן חוות דעת משפטית. הוא אוסף מידע ומעביר אליכם.</p></div>
+    <div class="card"><h3>עונה על שאלות נפוצות</h3><p>שעות פעילות, שכר טרחה, מיקום, מסמכים להביא, איך קובעים פגישת ייעוץ.</p></div>
+    <div class="card"><h3>אתם שולטים</h3><p>אתם קובעים מה מותר לו לומר ומתי עליו להתקשר אליכם מיד.</p></div>
+    <div class="card"><h3>לא רק לעורכי דין</h3><p>רואי חשבון, יועצי מס ובעלי מקצוע נוספים יכולים להשתמש בו גם הם.</p></div>
+  </div>
+</section>
+
+<section id="join">
+  <h2>הצטרפו לרשימת הגישה המוקדמת</h2>
+  <p style="color:var(--mute);margin-top:-12px">ספרו לנו קצת על עצמכם. ניצור אתכם קשר כדי להקים פיילוט חינם.</p>
+  <form id="f">
+    <label for="name">שם</label>
+    <input id="name" required autocomplete="name">
+    <label for="contact">מספר וואטסאפ או אימייל</label>
+    <input id="contact" required>
+    <label for="type">מה התחום שלכם?</label>
+    <select id="type">
+      <option>עורך דין</option><option>רואה חשבון / יועץ מס</option><option>בעל מקצוע אחר</option>
+    </select>
+    <button class="btn" id="b" type="submit">שלחו לי גישה מוקדמת</button>
+    <div id="msg" role="status"></div>
+    <p class="note">בלי ספאם. נשתמש בפרטים שלכם רק כדי ליצור קשר בנוגע לשירות.</p>
+  </form>
+</section>
+</div>
+<footer><div class="wrap">© Replo · עוזר חכם למשרדים מקצועיים. אינו מספק ייעוץ משפטי.</div></footer>
+
+<script>
+const f=document.getElementById('f'),msg=document.getElementById('msg'),b=document.getElementById('b');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  b.disabled=true;msg.textContent='';
+  const row={name:f.name.value.trim(),contact:f.contact.value.trim(),type:f.type.value};
+  try{
+    const res=await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(row)});
+    if(!res.ok) throw new Error('failed');
+    f.reset();msg.style.color='var(--accent)';
+    msg.textContent='תודה! ניצור אתכם קשר בקרוב.';
+  }catch(err){
+    msg.style.color='#c0392b';
+    msg.textContent='מצטערים, לא הצלחנו לשמור את הפרטים. נסו שוב מאוחר יותר.';
+  }
+  b.disabled=false;
+});
+</script>
+</body>
+</html>
