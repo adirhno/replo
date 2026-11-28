@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const { MongoClient } = require('mongodb');
 
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 4003;
 const ADMIN_KEY = process.env.ADMIN_KEY;
 if (!process.env.MONGODB_URI || !ADMIN_KEY) {
   console.error('Missing MONGODB_URI or ADMIN_KEY (see .env.example)');
